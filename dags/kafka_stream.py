@@ -15,7 +15,8 @@ default_args = {
 }
 
 # kafka_servers = ['ec2-3-28-179-223.me-central-1.compute.amazonaws.com:9092']
-kafka_servers = ['localhost:9092']
+# kafka_servers = ['localhost:9092']
+kafka_servers = ['broker:29092']
 
 def get_data():
     import requests
@@ -64,26 +65,12 @@ def stream_data():
             logging.error(f'An error occured: {e}')
             continue
 
-# def stream_data():
-#     import json
-#     from kafka import KafkaProducer
-#     import time
+with DAG('user_automation',
+         default_args=default_args,
+         schedule_interval='@daily',
+         catchup=False) as dag:
 
-#     res = json.dumps(get_data())
-#     producer = KafkaProducer(bootstrap_servers=kafka_servers, max_block_ms=5000)
-#     print(res)
-#     # producer.send('users_created', json.dumps(res).encode('utf-8'))
-
-# with DAG('user_automation',
-#          default_args=default_args,
-#          schedule_interval='@daily',
-#          catchup=False) as dag:
-
-#     streaming_task = PythonOperator(
-#         task_id='stream_data_from_api',
-#         python_callable=stream_data
-#     )
-
-
-# print(format_data(get_data()))
-stream_data()
+    streaming_task = PythonOperator(
+        task_id='stream_data_from_api',
+        python_callable=stream_data
+    )
