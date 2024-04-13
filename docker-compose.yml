@@ -141,7 +141,7 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./script/entrypoint.sh:/opt/airflow/script/entrypoint.sh
-      - ./requirements.txt:/opt/airflow/requirements.txt
+      - ./requirements/requirements.txt:/opt/airflow/requirements.txt
     ports:
       - "8080:8080"
     healthcheck:
@@ -160,7 +160,7 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./script/entrypoint.sh:/opt/airflow/script/entrypoint.sh
-      - ./requirements.txt:/opt/airflow/requirements.txt
+      - ./requirements/requirements.txt:/opt/airflow/requirements.txt
     environment:
       - LOAD_EX=n
       - EXECUTOR=Sequential

@@ -14,6 +14,9 @@ default_args = {
     'start_date': datetime(2023, 9, 3, 10, 00)
 }
 
+# kafka_servers = ['ec2-3-28-179-223.me-central-1.compute.amazonaws.com:9092']
+kafka_servers = ['localhost:9092']
+
 def get_data():
     import requests
 
@@ -48,7 +51,7 @@ def stream_data():
     import time
     import logging
 
-    producer = KafkaProducer(bootstrap_servers=['ec2-51-112-91-23.me-central-1.compute.amazonaws.com:9092'], max_block_ms=5000)
+    producer = KafkaProducer(bootstrap_servers=kafka_servers, max_block_ms=5000)
     curr_time = time.time()
 
     while True:
@@ -56,7 +59,7 @@ def stream_data():
             break
         try:
             res = format_data(get_data())
-            producer.send('users_created_2', json.dumps(res).encode('utf-8'))
+            producer.send('users_created', json.dumps(res).encode('utf-8'))
         except Exception as e:
             logging.error(f'An error occured: {e}')
             continue
@@ -67,10 +70,9 @@ def stream_data():
 #     import time
 
 #     res = json.dumps(get_data())
+#     producer = KafkaProducer(bootstrap_servers=kafka_servers, max_block_ms=5000)
 #     print(res)
-
-#     producer = KafkaProducer(bootstrap_servers=['3.29.138.119:9092'], max_block_ms=5000)
-#     producer.send('users_created', json.dumps(res).encode('utf-8'))
+#     # producer.send('users_created', json.dumps(res).encode('utf-8'))
 
 # with DAG('user_automation',
 #          default_args=default_args,
