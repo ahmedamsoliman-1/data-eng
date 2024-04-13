@@ -48,7 +48,7 @@ def stream_data():
     import time
     import logging
 
-    producer = KafkaProducer(bootstrap_servers=['3.29.138.119:9092'], max_block_ms=5000)
+    producer = KafkaProducer(bootstrap_servers=['ec2-51-112-91-23.me-central-1.compute.amazonaws.com:9092'], max_block_ms=5000)
     curr_time = time.time()
 
     while True:
