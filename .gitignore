@@ -223,6 +223,7 @@ cover/
 
 # Translations
 *.mo
+*.zip
 *.pot
 
 # Django stuff:
@@ -334,3 +335,6 @@ target/
 dbt_packages/
 logs/
 config/.user.yml
+
+
+env*
