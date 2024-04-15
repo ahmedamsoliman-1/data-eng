@@ -9,7 +9,9 @@ __pycache__/
 venv-1
 
 jar/
-
+logs/
+*.db
+*.cfg
 # Distribution / packaging
 .Python
 build/
