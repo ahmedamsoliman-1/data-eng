@@ -6,26 +6,26 @@ import pyspark.sql
 spark = pyspark.sql.SparkSession \
     .builder \
     .appName("Python Spark SQL basic example") \
-    .config('spark.driver.extraClassPath', "/Users/harshittyagi/Downloads/postgresql-42.2.18.jar") \
+    .config('spark.driver.extraClassPath', "/Users/ahmed.soliman/workspace/ahmed/personal/data-eng/jar/postgresql-42.7.3.jar") \
     .getOrCreate()
 
 ##read movies table from db using spark
 movies_df = spark.read \
     .format("jdbc") \
-    .option("url", "jdbc:postgresql://localhost:5432/etl_pipeline") \
+    .option("url", "jdbc:postgresql://localhost:5432/postgres") \
     .option("dbtable", "movies") \
-    .option("user", "harshittyagi") \
-   .option("password", "doll") \
+    .option("user", "postgres") \
+   .option("password", "postgres") \
     .option("driver", "org.postgresql.Driver") \
     .load()
 
 ##read users table from db using spark
 users_df = spark.read \
     .format("jdbc") \
-    .option("url", "jdbc:postgresql://localhost:5432/etl_pipeline") \
+    .option("url", "jdbc:postgresql://localhost:5432/postgres") \
     .option("dbtable", "users") \
-    .option("user", "harshittyagi") \
-   .option("password", "doll") \
+    .option("user", "postgres") \
+   .option("password", "postgres") \
     .option("driver", "org.postgresql.Driver") \
     .load()
 

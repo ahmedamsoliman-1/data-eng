@@ -5,7 +5,7 @@ import pyspark
 spark = pyspark.sql.SparkSession \
    .builder \
    .appName("Python Spark SQL basic example") \
-   .config('spark.driver.extraClassPath', "/Users/harshittyagi/Downloads/postgresql-42.2.18.jar") \
+   .config('spark.driver.extraClassPath', "/Users/ahmed.soliman/workspace/ahmed/personal/data-eng/jar/postgresql-42.7.3.jar") \
    .getOrCreate()
 
 

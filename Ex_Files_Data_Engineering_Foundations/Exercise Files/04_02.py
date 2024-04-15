@@ -5,23 +5,43 @@ import pyspark
 spark = pyspark.sql.SparkSession \
    .builder \
    .appName("Python Spark SQL basic example") \
-   .config('spark.driver.extraClassPath', "/Users/harshittyagi/Downloads/postgresql-42.2.18.jar") \
+   .config('spark.driver.extraClassPath', "/Users/ahmed.soliman/workspace/ahmed/personal/data-eng/jar/postgresql-42.7.3.jar") \
    .getOrCreate()
 
 
-##read table from db using spark jdbc
+print("=======")
+print("=======")
+print("=======")
+print("=======")
+
+
 movies_df = spark.read \
    .format("jdbc") \
-   .option("url", "jdbc:postgresql://localhost:5432/etl_pipeline") \
+   .option("url", "jdbc:postgresql://localhost:5432/postgres") \
    .option("dbtable", "movies") \
-   .option("user", "harshittyagi") \
-   .option("password", "doll") \
+   .option("user", "postgres") \
+   .option("password", "postgres") \
    .option("driver", "org.postgresql.Driver") \
    .load()
 
-##print the movies_df
-print(movies_df.show())
+users_df = spark.read \
+   .format("jdbc") \
+   .option("url", "jdbc:postgresql://localhost:5432/postgres") \
+   .option("dbtable", "users") \
+   .option("user", "postgres") \
+   .option("password", "postgres") \
+   .option("driver", "org.postgresql.Driver") \
+   .load()
 
+
+
+
+print(movies_df.show())
+print("=======")
+print("=======")
+print("=======")
+print("=======")
+print(users_df.show())
 
 
 
