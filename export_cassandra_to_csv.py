@@ -4,7 +4,7 @@ import subprocess
 cassandra_host = '172.27.89.125'
 cassandra_port = 9042
 keyspace = 'cs2_keyspace_5'
-tables = [ 'cs2_games', 'cs2_players']
+tables = [ 'cs2_fen_structure', 'cs2_game_termination', 'cs2_games', 'cs2_move_eval', 'cs2_movestack', 'cs2_player_stats', 'cs2_players' ]
 
 output_dir = 'output'
 

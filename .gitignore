@@ -222,7 +222,7 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
-
+# output
 # Translations
 *.mo
 *.zip
@@ -233,7 +233,7 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-
+temp
 # Flask stuff:
 instance/
 .webassets-cache
