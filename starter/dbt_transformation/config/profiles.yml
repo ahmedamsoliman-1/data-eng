@@ -1,14 +1,14 @@
 dbt_transformation:
   outputs:
     dev:
-      dataset: "{{ env_var('transformed_data', '') }}"
+      dataset: "{{ env_var('DBT_BIGQUERY_DATASET', '') }}"
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: "{{ env_var('/Users/ahmed.soliman/workspace/ahmed/personal/data-eng/big-star-420419-61bab6eb8c72.json', '') }}"
-      location: "{{ env_var('US', '') }}"
+      keyfile: "{{ env_var('DBT_BIGQUERY_KEYFILE_PATH', '') }}"
+      location: "US"
       method: service-account
       priority: interactive
-      project: "{{ env_var('big-star-420419', '') }}"
+      project: "big-star-420419"
       threads: 1
       type: bigquery
   target: dev
