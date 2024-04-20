@@ -1,0 +1,1 @@
+{"id":"qsgNCLi3kFOeYV1I","body":"DELETE FROM cs2_players\nWHERE \n  player_id = e9d87a0d-1f6e-5a71-bfd4-dd4224292083 AND\n  current_year = 2024 AND\n  current_month = 4 AND \n  current_day = 15","filename":"script_5.cql","clusterName":"CS2-Alpha","keyspace":"cs2_keyspace_5","source":"action","modified":true}

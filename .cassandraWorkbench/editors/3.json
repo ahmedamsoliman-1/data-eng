@@ -1,0 +1,1 @@
+{"id":"cD0rT4fRtAgjL8NM","body":"UPDATE cs2_keyspace_5.cs2_games\nSET\n\ttermination_reason='Manual'\nWHERE game_start_month=4 AND game_start_day=18 AND game_id=9e75406b-c288-521e-b720-ae1bea2e8447;","filename":"script_3.cql","clusterName":"CS2-Alpha","keyspace":"cs2_keyspace_5","source":"action","modified":true}

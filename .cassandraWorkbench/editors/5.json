@@ -1,0 +1,1 @@
+{"id":"GLjrMUZ7DJnCVa4O","body":"  SELECT game_start_month, game_start_day, game_id, captured_piece_byblack, game_status, is_active, termination_reason\n  FROM cs2_keyspace_5.cs2_games\n  WHERE game_status = 'Terminated'\n  ALLOW FILTERING;","filename":"script_1.cql","clusterName":"CS2-Alpha","keyspace":"cs2_keyspace_5","source":"action","modified":true}

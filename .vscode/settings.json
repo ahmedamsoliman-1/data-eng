@@ -1,0 +1,10 @@
+{
+    "cassandraWorkbench.activeClusterName": "CS2-Alpha",
+    "cassandraWorkbench.activeKeyspace": [
+        [
+            "CS2-Alpha",
+            "cs2_keyspace_5"
+        ]
+    ],
+    "cassandraWorkbench.splitPosition": 56.55692404487791
+}
